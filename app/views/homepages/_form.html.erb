@@ -1,0 +1,19 @@
+<%= form_for(@homepage) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :collegename %><br />
+    <%= f.text_field :collegename %>
+  </div>
+  <div class="field">
+    <%= f.label :published_on %><br />
+    <%= f.text_field :published_on %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

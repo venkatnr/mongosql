@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @homepage.name %>
+</p>
+
+<p>
+  <b>Collegename:</b>
+  <%= @homepage.collegename %>
+</p>
+<p>
+  <b>publishedon:</b>
+  <%= @homepage.published_on %>
+</p>
+
+<% if @homepage.comments.size > 0 %>
+  <h2>Comments</h2>
+  <% for comm in @homepage.comments %>
+    <h3><%= comm.name %></h3>
+    <p><%= comm.content %></p>
+  <% end %>
+<% end %>
+
+<h2>New Comment</h2>
+<%= form_for [@homepage, Comment.new] do |f| %>
+  <p><%= f.label :name %> <%= f.text_field :name %></p>
+  <p><%= f.text_area :content, :rows => 10 %></p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_homepage_path(@homepage) %> |
+<%= link_to 'Back', homepages_path %>
