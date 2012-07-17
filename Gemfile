@@ -10,8 +10,16 @@ gem 'mysql'
 gem 'json'
 
 gem 'mongoid', '~> 2.4.6'
+
 gem 'bson_ext'
+
 gem 'devise'
+
+
+group :production do
+  gem 'pg'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
