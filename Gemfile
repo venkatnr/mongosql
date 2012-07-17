@@ -15,7 +15,7 @@ gem 'bson_ext'
 
 gem 'devise'
 
-
+gem 'pg'
 group :production do
   gem 'pg'
 end
